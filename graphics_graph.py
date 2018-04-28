@@ -32,9 +32,11 @@ def draw_points(array_of_points, point_size, scale_x, scale_y, offset_x, offset_
 	DISPLAYSURF = pygame.display.set_mode((400, 300))
 	pygame.display.set_caption("Graphing window")
 		
-	DISPLAYSURF.fill((255, 255, 255)) # Make a white background
-	for i in array_of_points:
-		pygame.draw.circle(DISPLAYSURF, (255, 0, 0), (int(i[0])*scale_x + offset_x, int(i[1])*scale_y + offset_y), point_size, 0) # Draw a small circle at every point
+	DISPLAYSURF.fill(WHITE) # Make a white background
+	pygame.draw.line(DISPLAYSURF, BLUE, (-999, 150), (999, 150), 4) # Draw the x and y axes
+	pygame.draw.line(DISPLAYSURF, GREEN, (200, -999), (200, 999), 4)
+	for i in array_of_points:# Draw the points
+		pygame.draw.circle(DISPLAYSURF, RED, (int(i[0])*scale_x + offset_x, int(i[1])*scale_y + offset_y), point_size, 0) # Draw a small circle at every point
 			
 	running = True
 	while True: # Main pygame loop
@@ -46,6 +48,14 @@ def draw_points(array_of_points, point_size, scale_x, scale_y, offset_x, offset_
 		if running == False:
 			break
 	print("window closed")
+
+# Constants for colours
+BLACK = (  0,   0,   0)
+WHITE = (255, 255, 255)
+RED = (255,   0,   0)
+GREEN = (  0, 255,   0)
+BLUE = (  0,   0, 255)
+
 
 points_a = calc_linear_points(5, 10, 0.5, 2, 3)
 points_b = calc_quadratic_points(-7, 20, 2, 2, -4, 8)
