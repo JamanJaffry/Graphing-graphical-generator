@@ -1,3 +1,4 @@
+import pygame
 def calc_linear_points(start, stop, interval, m, c):
 	# This function returns a list of points from start to stop with a gap of interval for the equation y = mx + c
 	points = []
