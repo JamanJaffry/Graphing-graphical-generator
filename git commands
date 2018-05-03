@@ -1,0 +1,9 @@
+Frequently used commands
+git init                      - To have git start tracking file changes in the current Directory
+git status                    - View which files have changed since the last commit
+git log                       - View a log of commits
+git add [file_name]           - Add a file for git to track changes to
+git commit -a -m "[message]"  - Commit the changes to the the local repository
+git push                      - Push the commits to the omline repository
+git pull                      - Pull the latest version from the online repo to you computer and merge them
+git clone [repo_url]          - Download the repo to your computer
